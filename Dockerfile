@@ -8,8 +8,7 @@ ADD . /project/
 ADD .env /project/.env
 
 RUN pip install -r requirements.txt
-RUN cd /project
-
+EXPOSE 5432
 #RUN ufw allow 5444
 #RUN alembic revision --autogenerate
 #RUN alembic upgrade head

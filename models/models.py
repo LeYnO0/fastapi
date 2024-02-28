@@ -1,6 +1,5 @@
 from sqlalchemy import MetaData, Column, Integer, String, UUID
 from sqlalchemy.orm import Mapped, mapped_column, DeclarativeBase, declarative_base
-import uuid
 metadata = MetaData()
 
 

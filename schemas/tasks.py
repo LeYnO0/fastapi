@@ -1,6 +1,5 @@
 from pydantic import BaseModel, UUID4, Field
 from typing import List
-from uuid import uuid4
 
 
 class Params(BaseModel):
