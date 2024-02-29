@@ -11,17 +11,21 @@ services:
     ports:
       - 5444:5432
 
-
   application:
     container_name: my_application
     build:
       context: .
+#    links:
+#      - postgres_db
+    command: bash -c "sleep 5 && alembic revision --autogenerate && alembic upgrade head && uvicorn main:app --reload --host 0.0.0.0 --port 8000"
     depends_on:
       - postgres_db
+
     ports:
       - 8005:8000
     env_file:
       - .env
+
 
 
   pgadmin:

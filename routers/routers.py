@@ -38,6 +38,7 @@ def task_update(new_data: TaskUpdate):
         old_data.param_1 = new_data.new_params[0].param_1
         old_data.param_2 = new_data.new_params[0].param_2
         session.commit()
+        return {"status:": "successed"}
     except:
         session.rollback()
 
