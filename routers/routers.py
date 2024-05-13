@@ -12,7 +12,10 @@ router = APIRouter()
 @router.post('/add')
 def task_add(task_data: TaskAdd):
     try:
-        data = Task(uuid=task_data.uuid, task=task_data.task, param_1=task_data.params[0].param_1, param_2=task_data.params[0].param_2)
+        data = Task(uuid=task_data.uuid,
+                    task=task_data.task,
+                    param_1=task_data.params[0].param_1,
+                    param_2=task_data.params[0].param_2,)
         session.add(data)
         session.commit()
         return {"statuscode:": 200}
@@ -41,6 +44,5 @@ def task_update(new_data: TaskUpdate):
         return {"status:": "successed"}
     except:
         session.rollback()
-
     finally:
         session.close()
